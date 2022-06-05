@@ -80,8 +80,8 @@ public class Main extends Application {
         /**
          * 设置全屏   设置全屏必须设置Scene
          */
-        primaryStage.setFullScreen(true);
-        primaryStage.setScene(new Scene(new Group()));
+//        primaryStage.setFullScreen(true);
+//        primaryStage.setScene(new Scene(new Group()));
 
         /**
          * 设置背景不透明度
@@ -89,6 +89,27 @@ public class Main extends Application {
          *      1完全不透明
          */
         primaryStage.setOpacity(0.5);
+
+        /**
+         * 设置窗口置顶
+         */
+        primaryStage.setAlwaysOnTop(true);
+
+        /**
+         * 设置stage初始坐标
+         */
+        primaryStage.setX(100);
+        primaryStage.setY(100);
+
+        /**
+         * javafx中监听某个属性，方法的名称都是 属性Property()
+         */
+        primaryStage.xProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+                System.out.println("当前的x坐标： " + newValue);
+            }
+        });
 
         // 显示窗口
         primaryStage.show();
