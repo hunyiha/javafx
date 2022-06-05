@@ -83,6 +83,13 @@ public class Main extends Application {
         primaryStage.setFullScreen(true);
         primaryStage.setScene(new Scene(new Group()));
 
+        /**
+         * 设置背景不透明度
+         *      0完全透明
+         *      1完全不透明
+         */
+        primaryStage.setOpacity(0.5);
+
         // 显示窗口
         primaryStage.show();
 
